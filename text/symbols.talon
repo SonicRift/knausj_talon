@@ -1,6 +1,7 @@
 question [mark]: "?"
 (downscore | underscore): "_"
 double dash: "--"
+minus twice: "--"
 (bracket | brack | left bracket): "{"
 (rbrack | are bracket | right bracket): "}"
 triple quote: "'''"
@@ -8,10 +9,12 @@ triple quote: "'''"
 #ellipses: "…"
 ellipses: "..."
 (comma and | spamma): ", "
+swipe: ", "
 plus: "+"
 arrow: "->"
 dub arrow: "=>"
 new line: "\\n"
+line new: "\\n"
 carriage return: "\\r"
 line feed: "\\r\\n"
 empty dubstring:
@@ -31,14 +34,14 @@ empty escaped string:
 (inside parens | args):
 	insert("()")
 	key(left)
-inside (squares | list): 
-	insert("[]") 
+inside (squares | list):
+	insert("[]")
 	key(left)
-inside (bracket | braces): 
-	insert("{}") 
+inside (bracket | braces):
+	insert("{}")
 	key(left)
-inside percent: 
-	insert("%%") 
+inside percent:
+	insert("%%")
 	key(left)
 inside quotes:
 	insert('""')
