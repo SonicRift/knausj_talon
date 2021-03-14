@@ -198,3 +198,13 @@ select (more|this): user.vscode("editor.action.smartSelect.expand")
 
 # vim mode
 toggle them: user.vscode("vim: toggle vim mode")
+
+# tab actions
+tab close others:
+  key("alt-cmd-t")
+
+tab close all:
+  key("cmd-k w")
+
+tab close saved:
+  key("cmd-k u")
