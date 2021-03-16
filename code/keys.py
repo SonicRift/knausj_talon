@@ -150,7 +150,7 @@ punctuation_words = {
     "at sign": "@",
     "and sign": "&",
     "ampersand": "&",
-    "semi": ";",
+    "sunk": ";",
     "sinker": ";",
     "tanker": "`",
 }
