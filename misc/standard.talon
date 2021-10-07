@@ -12,18 +12,27 @@
 #word shell: "shell".
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
-scroll up: edit.page_up()
-scroll down: edit.page_down()
-copy that: edit.copy()
-cut that: edit.cut()
-paste that: edit.paste()
-undo that: edit.undo()
-redo that: edit.redo()
+(page | scroll) up: edit.page_up()
+(page | scroll) down: edit.page_down()
+copy: edit.copy()
+cut | snatch: edit.cut()
+paste that | spark: edit.paste()
+undo: edit.undo()
+redo: edit.redo()
 paste match: edit.paste_match_style()
 file save: edit.save()
-wipe: key(backspace)    
-(pad | padding): 
-	insert("  ") 
+# wipe: key(backspace)
+pad right:
+	insert(" ")
 	key(left)
-slap: edit.line_insert_down()
-
+padding:
+	insert("  ")
+	key(left)
+^slurp$:
+  key(delete)
+  key(backspace)
+slap:
+	edit.line_end()
+	key(enter)
+switch: key(cmd-tab)
+spunk: key(delete)

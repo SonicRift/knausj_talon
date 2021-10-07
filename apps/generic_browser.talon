@@ -13,6 +13,8 @@ go private: browser.open_private_window()
 
 bookmark it: browser.bookmark()
 bookmark tabs: browser.bookmark_tabs()
+
+tab reset: browser.reload()
 (refresh | reload) it: browser.reload()
 (refresh | reload) it hard: browser.reload_hard()
 

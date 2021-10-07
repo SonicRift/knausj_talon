@@ -1,14 +1,20 @@
+call: "()"
+arrow fat: "=>"
+coal gap: ": "
+coal shock: ":\n"
+assign: " = "
+teapot: "this."
 question [mark]: "?"
 (downscore | underscore): "_"
-double dash: "--"
-(bracket | brack | left bracket): "{"
-(rbrack | are bracket | right bracket): "}"
+minus twice: "--"
+block left: "{"
+block right: "}"
 triple quote: "'''"
-(triple grave | triple back tick | gravy):
+triple tanker:
     insert("```")
 (dot dot | dotdot): ".."
-ellipses: "..."
-(comma and | spamma): ", "
+ellipsis: "..."
+pebble: ", "
 plus: "+"
 arrow: "->"
 dub arrow: "=>"
@@ -29,14 +35,19 @@ empty escaped string:
     "\\'\\'"
     key(left)
     key(left)
-(inside parens | args):
+arcs:
 	insert("()")
 	key(left)
-inside (squares | square brackets | list):
-	insert("[]")
-	key(left)
-inside (bracket | braces):
+index:
+    insert("[]")
+    key(left)
+square:
+    insert("[]")
+inside block:
 	insert("{}")
+	key(left)
+inside angle:
+	insert("<>")
 	key(left)
 inside percent:
 	insert("%%")
@@ -47,7 +58,7 @@ inside (quotes | string):
 inside (double quotes | dubquotes):
     insert('""')
 	key(left)
-inside (graves | back ticks):
+inside tanker:
 	insert("``")
 	key(left)
 angle that:
@@ -56,10 +67,10 @@ angle that:
 (square | square bracket) that:
     text = edit.selected_text()
     user.paste("[{text}]")
-(bracket | brace) that:
+block that:
     text = edit.selected_text()
     user.paste("{{{text}}}")
-(parens | args) that:
+(parents | arcs) that:
     text = edit.selected_text()
     user.paste("({text})")
 percent that:
@@ -71,6 +82,6 @@ quote that:
 (double quote | dubquote) that:
     text = edit.selected_text()
     user.paste('"{text}"')
-(grave | back tick) that:
+tanker that:
     text = edit.selected_text()
     user.paste('`{text}`')

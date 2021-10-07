@@ -3,10 +3,10 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip oil".split(
     " "
 )
-letters_string = "abcdefghijklmnopqrstuvwxyz"
+letters_string = "abcdefghijklmnopqrstuvwxyzo"
 
 default_digits = "zero one two three four five six seven eight nine".split(" ")
 numbers = [str(i) for i in range(10)]
@@ -118,7 +118,7 @@ modifier_keys = {
     "shift": "shift",  #'sky':     'shift',
     "super": "super",
 }
-if app.platform  == "mac":
+if app.platform == "mac":
     modifier_keys["command"] = "cmd"
     modifier_keys["option"] = "alt"
 ctx.lists["self.modifier_key"] = modifier_keys
@@ -150,21 +150,18 @@ punctuation_words = {
     "at sign": "@",
     "and sign": "&",
     "ampersand": "&",
-
-    # Currencies
-    "dollar sign": "$",
-    "pound sign": "£",
+    "semi": ";",
+    "sinker": ";",
+    "tanker": "`",
 }
 symbol_key_words = {
     "dot": ".",
     "point": ".",
     "quote": "'",
-    "apostrophe": "'",
-    "L square": "[",
-    "left square": "[",
-    "square": "[",
-    "R square": "]",
-    "right square": "]",
+    "square left": "[",
+    "index left": "[",
+    "square right": "]",
+    "index right": "]",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
@@ -175,15 +172,9 @@ symbol_key_words = {
     "bang": "!",
     "down score": "_",
     "under score": "_",
-    "paren": "(",
+    "arcs left": "(",
     "L paren": "(",
-    "left paren": "(",
-    "R paren": ")",
-    "right paren": ")",
-    "brace": "{",
-    "left brace": "{",
-    "R brace": "}",
-    "right brace": "}",
+    "arcs right": ")",
     "angle": "<",
     "left angle": "<",
     "less than": "<",
@@ -231,8 +222,14 @@ simple_keys = [
 
 alternate_keys = {
     "delete": "backspace",
+    # mispronunciation
+    # "delite": "backspace",
+    # "delate": "backspace",
+    # "deleat": "backspace",
+    # "tolete": "backspace",
+    # "polete": "backspace",
     "forward delete": "delete",
-    #'junk': 'backspace',
+    "junk": "backspace",
     "page up": "pageup",
     "page down": "pagedown",
 }

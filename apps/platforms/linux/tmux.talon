@@ -1,7 +1,8 @@
 os: linux
 tag: user.tmux
 -
-mux: "tmux "
+mux: key(ctrl-a)
+mux attach: "tmux attach -t "
 
 #session management
 mux new session:

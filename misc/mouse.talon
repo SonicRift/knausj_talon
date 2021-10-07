@@ -1,8 +1,11 @@
 control mouse: user.mouse_toggle_control_mouse()
+camera pause: user.mouse_toggle_control_mouse()
 zoom mouse: user.mouse_toggle_zoom_mouse()
+mouse zoom: user.mouse_toggle_zoom_mouse()
 camera overlay: user.mouse_toggle_camera_overlay()
-run calibration: user.mouse_calibrate()	
-touch: 
+run calibration: user.mouse_calibrate()
+camera calibrate: user.mouse_calibrate()
+(touch | click left):
 	mouse_click(0)
 	# close the mouse grid if open
 	user.grid_close()
@@ -10,12 +13,12 @@ touch:
 	# Touch automatically ends left drags so this is for right drags specifically
 	user.mouse_drag_end()
 
-righty:
+(righty | click right):
 	mouse_click(1)
 	# close the mouse grid if open
 	user.grid_close()
 
-midclick: 
+(midclick | click middle) :
 	mouse_click(2)
 	# close the mouse grid
 	user.grid_close()
@@ -27,31 +30,37 @@ midclick:
 #option = alt
 #shift
 #super = windows key
-<user.modifiers> touch: 
+click <user.modifiers>:
 	key("{modifiers}:down")
 	mouse_click(0)
 	key("{modifiers}:up")
 	# close the mouse grid
 	user.grid_close()
-<user.modifiers> righty: 
+# <user.modifiers> (touch | click left):
+# 	key("{modifiers}:down")
+# 	mouse_click(0)
+# 	key("{modifiers}:up")
+# 	# close the mouse grid
+# 	user.grid_close()
+<user.modifiers> (righty | click right):
 	key("{modifiers}:down")
 	mouse_click(1)
 	key("{modifiers}:up")
 	# close the mouse grid
 	user.grid_close()
-(dubclick | duke): 
+(dubclick | duke | click double):
 	mouse_click()
 	mouse_click()
 	# close the mouse grid
 	user.grid_close()
-(tripclick | triplick): 
+(tripclick | triplick | click triple):
 	mouse_click()
 	mouse_click()
 	mouse_click()
 	# close the mouse grid
 	user.grid_close()
-left drag | drag:
-	user.mouse_drag(0)
+drag:
+	user.mouse_drag()
 	# close the mouse grid
 	user.grid_close()
 right drag | righty drag:
@@ -109,4 +118,6 @@ wheel tiny right here:
     mouse_scroll(0, 20)
 curse yes: user.mouse_show_cursor()
 curse no: user.mouse_hide_cursor()
+curse show: user.mouse_show_cursor()
+curse hide: user.mouse_hide_cursor()
 copy mouse position: user.copy_mouse_position()

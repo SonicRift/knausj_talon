@@ -1,13 +1,13 @@
-find it:
+find it | marco:
     edit.find()
 
 next one:
     edit.find_next()
 
-go word left:
+go word left | lucky:
     edit.word_left()
 
-go word right:
+go word right | rocky:
     edit.word_right()
 
 go left:
@@ -28,22 +28,22 @@ go line start:
 go line end:
     edit.line_end()
 
-go way left:
+go way left | lefty:
     edit.line_start()
     edit.line_start()
 
-go way right:
+go way right | ricky:
     edit.line_end()
 
-go way down:
+go way down | look bottom:
     edit.file_end()
 
-go way up:
+go way up | look top:
     edit.file_start()
-    
+
 go bottom:
     edit.file_end()
-    
+
 go top:
     edit.file_start()
 
@@ -54,7 +54,7 @@ go page up:
     edit.page_up()
 
 # selecting
-select line:
+select line | shackle:
     edit.select_line()
 
 select all:
@@ -75,16 +75,16 @@ select down:
 select word:
     edit.select_word()
 
-select word left:
+select word left | lock salt:
     edit.extend_word_left()
 
-select word right:
+select word right | rocksalt:
     edit.extend_word_right()
 
-select way left:
+select way left | lexi:
     edit.extend_line_start()
 
-select way right:
+select way right | roxy:
     edit.extend_line_end()
 
 select way up:
@@ -121,13 +121,18 @@ clear down:
 clear word:
     edit.delete_word()
 
-clear word left:
+clear word left | trough:
     edit.extend_word_left()
     edit.delete()
 
-clear word right:
+clear word right | kite:
     edit.extend_word_right()
     edit.delete()
+
+# mispronunciation
+# kit:
+#     edit.extend_word_right()
+#     edit.delete()
 
 clear way left:
     edit.extend_line_start()
